@@ -17,7 +17,7 @@ PRINTF_SRCS = $(PRINTF)/char_handler.c $(PRINTF)/ft_puthex.c $(PRINTF)/Libft_src
 
 OBJS = $(SRCS:.c=.o)
 
-PRINTF_OBJS = $(PRINTF:.c=.o)
+PRINTF_OBJS = $(PRINTF_SRCS:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra -g
 

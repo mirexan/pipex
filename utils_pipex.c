@@ -11,37 +11,65 @@
 /* ************************************************************************** */
 
 #include "pipex.h"
-static void free_array(t_args *args)
+
+void	handle_error(char *error_text,char *detail, t_args *args)
 {
-	int i;
-	
+	ft_putstr_fd("pipex: ", 2);
+	ft_putstr_fd(error_text, 2);
+	if (detail)
+		ft_putstr_fd(detail, 2);
+	ft_putstr_fd("\n", 2);
+	ft_cleanup(args);
+	exit(1);	
+}
+
+static void	free_array(char **arr)
+{
+	int	i;
+
 	i = 0;
-	while (args->cmd_paths[i])
-		{
-			free(*args->cmd_paths[i]);
-			i++;
-		}
-		free(args->cmd_paths);
+	if (!arr)
+		return ;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }
 
 void	ft_cleanup(t_args *args)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-	if(args->fd_infile != -1)
+	if (args->fd_infile != -1)
 		close(args->fd_infile);
-	if(args->fd_outfile != -1)
+	if (args->fd_outfile != -1)
 		close(args->fd_outfile);
-	if(args->cmd_paths)
-		free_array(args);
-	if(args->cmd_args)
+	if (args->cmd_paths)
+		free_array(args->cmd_paths);
+	if (args->cmd_args)
 	{
-		while(args->cmd_args[i])
+		while (args->cmd_args[i])
 		{
-			free_array(cmd_args[i]);
+			free_array(args->cmd_args[i]);
 			i++;
 		}
 		free(args->cmd_args);
+	}
+}
+
+void	ft_open_files(t_args *args, int argc, char **argv)
+{
+	args->fd_infile = open(argv[1], O_RDONLY);
+	if (args->fd_infile < 0)
+		perror("pipex : infile");
+	args->fd_outfile = open(argv[argc - 1], O_CREAT | O_WRONLY
+			| O_TRUNC, 0644);
+	if (args->fd_outfile < 0)
+	{
+		perror("pipex : outfile");
+		exit(EXIT_FAILURE);
 	}
 }

@@ -12,18 +12,23 @@
 
 #include "pipex.h"
 
-static	
+static void	init_args(t_args *args, int argc)
+{
+	args->fd_infile =  -1;
+	args->fd_outfile =  -1;
+	args->cmd_count = argc - 3;
+	args->cmd_paths = NULL;
+	args->cmd_args = NULL;
+}
 
 int main(int argc, char **argv, char **envp)
 {
 	t_args	 args;
 	
 	if (argc < 5)
-	{
-		
-	}
-	else 
-	{
-		ft_set_info(&argv);
-	}
+		write(2, "Missing arguments, partial execution\n",38); 
+	init_args(&args, argc);
+	ft_open_files(&args, argc, argv);
+	ft_parse_cmds(&args, argv, envp)
+	ft_cleanup(&args);
 }
