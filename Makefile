@@ -8,12 +8,13 @@ PRINTF = ft_printf
 
 ## ARCHIVOS FUENTE ##
 
-SRCS =  main_pipex.c ft_split.c utils_pipex.c
+SRCS =  main_pipex.c ft_split.c utils_pipex.c utils_pipex_2.c ft_exec_cmd.c
 
 PRINTF_SRCS = $(PRINTF)/char_handler.c $(PRINTF)/ft_puthex.c $(PRINTF)/Libft_src/ft_putchar_fd.c \
 		$(PRINTF)/pointer_handler.c $(PRINTF)/ft_printf.c $(PRINTF)/Libft_src/ft_putstr_fd.c \
 		$(PRINTF)/ft_putdec.c $(PRINTF)/str_handler.c $(PRINTF)/Libft_src/ft_itoa.c \
-		$(PRINTF)/Libft_src/ft_strlen.c
+		$(PRINTF)/Libft_src/ft_strlen.c $(PRINTF)/Libft_src/ft_strncmp.c $(PRINTF)/Libft_src/ft_strjoin.c \
+		$(PRINTF)/Libft_src/ft_strcmp.c
 
 OBJS = $(SRCS:.c=.o)
 

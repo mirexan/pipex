@@ -9,7 +9,7 @@
 /*   Updated: 2024/10/11 20:50:06 by mregada-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "../ft_printf.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t contador)
 {
