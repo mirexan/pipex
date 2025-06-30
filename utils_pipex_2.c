@@ -70,7 +70,7 @@ void	ft_parse_cmds(t_args *args, char **argv, char **envp)
 			handle_error("Malloc or split failed", NULL,args);
 		args->cmd_paths[i] = get_cmd_path(args->cmd_args[i][0], envp);
 		if(!args->cmd_paths[i])
-			handle_error("Command not found: ", args->cmd_args[i][0],args);
+			handle_error("Command not found", args->cmd_args[i][0],args);
 		i++;
 	}
 	args->cmd_paths[i] = NULL;

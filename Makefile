@@ -14,7 +14,7 @@ PRINTF_SRCS = $(PRINTF)/char_handler.c $(PRINTF)/ft_puthex.c $(PRINTF)/Libft_src
 		$(PRINTF)/pointer_handler.c $(PRINTF)/ft_printf.c $(PRINTF)/Libft_src/ft_putstr_fd.c \
 		$(PRINTF)/ft_putdec.c $(PRINTF)/str_handler.c $(PRINTF)/Libft_src/ft_itoa.c \
 		$(PRINTF)/Libft_src/ft_strlen.c $(PRINTF)/Libft_src/ft_strncmp.c $(PRINTF)/Libft_src/ft_strjoin.c \
-		$(PRINTF)/Libft_src/ft_strcmp.c
+		$(PRINTF)/Libft_src/ft_strcmp.c $(PRINTF)/Libft_src/ft_memset.c
 
 OBJS = $(SRCS:.c=.o)
 

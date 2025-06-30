@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #include <errno.h>
 #include <stddef.h>
@@ -27,6 +28,7 @@ typedef struct s_args
 	int	fd_outfile;
 	int	cmd_count;
 	int	pipes_fd[2];
+	char *outfile_name;
 	char	**cmd_paths;//array de strings ej. {"cat", "-e", NULL}
 	char	***cmd_args; //array de array strings ej. {"cat", "-e", NULL}
 	pid_t	*pid;
