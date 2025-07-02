@@ -1,5 +1,7 @@
 # pipex
 
+https://www.notion.so/Pipearx-20a165581f8380738bffefe47c2836da?source=copy_link#224165581f8380709151c18b9938e65c
+
 ## Enunciado
 
 ![Screenshot from 2025-07-02 13-03-54](https://github.com/user-attachments/assets/d5bd3e52-2e9d-49ba-bf9e-da269c1a95e6)
