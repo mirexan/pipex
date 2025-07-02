@@ -1,6 +1,6 @@
 # pipex
 
-https://www.notion.so/Pipearx-20a165581f8380738bffefe47c2836da?source=copy_link#224165581f8380709151c18b9938e65c
+![](https://images.unsplash.com/photo-1678446332697-84a033b4a29d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb)
 
 ## Enunciado
 
