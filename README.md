@@ -1,6 +1,5 @@
 # pipex
 
-![](https://images.unsplash.com/photo-1678446332697-84a033b4a29d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb)
 
 ## Enunciado
 
@@ -50,3 +49,4 @@ agobiada
      ~/pipexGit % cat outfile
     MariCarrmen, la gente está muy
     ```
+    ![](https://images.unsplash.com/photo-1678446332697-84a033b4a29d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb)
