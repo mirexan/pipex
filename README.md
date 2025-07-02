@@ -2,7 +2,7 @@
 
 ## Enunciado
 
-![imagen.png](attachment:d8491d66-2c20-48c7-9810-041b71ce16fa:imagen.png)
+![Screenshot from 2025-07-02 13-03-54](https://github.com/user-attachments/assets/d5bd3e52-2e9d-49ba-bf9e-da269c1a95e6)
 
 La finalidad del programa es simular el comportamiento del comando shell`< archivo1 comando1 | comando2 > archivo2`, tanto en la ejecución de comandos como manejo de errores.
 
