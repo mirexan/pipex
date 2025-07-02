@@ -79,7 +79,7 @@ int	main(int argc, char **argv, char **envp)
 {
 	t_args	args;
 
-	if (argc < 4)
+	if (argc < 4 || argc > 5)
 		exit (1);
 	init_args(&args, argc, argv);
 	ft_open_files(&args, argc, argv);
