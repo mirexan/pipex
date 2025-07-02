@@ -17,19 +17,20 @@
 # include <stddef.h>
 # include <stdarg.h>
 
-int	ft_printf(char const *str, ...);
-int	char_handler(va_list args);
-int	str_handler(va_list args);
-int	pointer_handler(va_list args);
-int	ft_puthex(char format, va_list args);
-int	ft_putdec(char format, va_list args);
-int	ft_strlen(const char *str);
-int	ft_putchar_fd(char c, int fd);
-int	ft_putstr_fd(char *s, int fd);
+int		ft_printf(char const *str, ...);
+int		char_handler(va_list args);
+int		str_handler(va_list args);
+int		pointer_handler(va_list args);
+int		ft_puthex(char format, va_list args);
+int		ft_putdec(char format, va_list args);
+int		ft_strlen(const char *str);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
 char	*ft_itoa(int n);
-int	ft_strcmp(const char *s1, const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strjoin(char const *s1, char const *s2);
-int	ft_strncmp(const char *s1, const char *s2, size_t contador);
+int		ft_strncmp(const char *s1, const char *s2, size_t contador);
 void	*ft_memset(void *s, int v, size_t n);
+char	**ft_split(char const *s, char c);
 
 #endif

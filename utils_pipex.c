@@ -13,7 +13,7 @@
 #include "pipex.h"
 
 void	handle_error(char *error_text, char *detail, t_args *args)
-{
+{//imprime error y cierra con 1
 	ft_putstr_fd("pipex: ", 2);
 	ft_putstr_fd(error_text, 2);
 	if (detail)
@@ -23,7 +23,7 @@ void	handle_error(char *error_text, char *detail, t_args *args)
 	}
 	ft_putstr_fd("\n", 2);
 	ft_cleanup(args);
-	exit(1);	
+	exit(1);
 }
 
 void	free_array(char **arr)
@@ -65,7 +65,7 @@ void	ft_cleanup(t_args *args)
 	}
 }
 
-static void	print_error(char *file_name)
+void	print_error(char *file_name)//imprime error
 {
 	ft_putstr_fd("pipex: ", 2);
 	ft_putstr_fd(strerror(errno), 2);
@@ -78,10 +78,10 @@ void	ft_open_files(t_args *args, int argc, char **argv)
 {
 	args->fd_infile = open(argv[1], O_RDONLY);
 	if (args->fd_infile < 0)
-		print_error(argv[1]);	
+		print_error(argv[1]); // imprime error pero no cerramos
 	args->fd_outfile = open(argv[argc - 1], O_CREAT | O_WRONLY | O_TRUNC, 0644);
-	if (args->fd_outfile < 0)
-	{
+	if (args->fd_outfile < 0)//en cambio si falla outfile
+	{//si que se trata de un error critico
 		print_error(argv[argc - 1]);
 		ft_cleanup(args);
 		exit(EXIT_FAILURE);
