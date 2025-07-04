@@ -49,5 +49,19 @@ agobiada
      ~/pipexGit % cat outfile
     MariCarrmen, la gente está muy
     ```
+3. **ls -l | wc -l**
+`ls -l` ignora la stdin (infile no se usa), muestra listado del directorio actual. `wc -l`cuenta cuantas lineas hay, el numero se escribe en outfile
+```bash
+< infile ls -l | wc -l > outfile
+./pipex infile "ls -l" "wc -l" outfile
+
+mregada-@cbr13s6 ~/prueba % < infile ls -l | wc -l > outfile
+mregada-@cbr13s6 ~/prueba % cat outfile 
+15
+mregada-@cbr13s6 ~/prueba % ./pipex infile "ls -l" "wc -l" outfile        
+mregada-@cbr13s6 ~/prueba % cat outfile 
+15
+```
+5. 
     ![imagen](https://github.com/user-attachments/assets/587cc7bf-4e62-4f76-a3b5-e404cc718145)
 
