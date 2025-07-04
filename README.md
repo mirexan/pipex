@@ -63,6 +63,14 @@ agobiada
     mregada-@cbr13s6 ~/prueba % cat outfile 
     15
     ```
+4. 4. **head -n 3 | tail -n 1**
+    
+    ```bash
+    < infile head -n 3 | tail -n 1 > outfile
+    ./pipex infile "head -n 3" "tail -n 1" outfile 
+    ```
+    
+    `head -n 3` obtiene las **primeras 3 líneas** del `infile`.`tail -n 1` se queda con **la tercera línea**.Esta se guarda en `outfile`.
 
     ![imagen](https://github.com/user-attachments/assets/587cc7bf-4e62-4f76-a3b5-e404cc718145)
 
