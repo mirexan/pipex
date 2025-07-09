@@ -15,6 +15,8 @@ int	ft_strlen(const char *str)
 	int	c;
 
 	c = 0;
+	if (!str)
+		return (0);
 	while (*str != '\0')
 	{
 		c++;

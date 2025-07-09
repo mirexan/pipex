@@ -12,30 +12,32 @@
 
 #include "../ft_printf.h"
 
+static void	join(char **ptr, char const *str)
+{
+	while (*str != '\0')
+	{
+		**ptr = *str;
+		(*ptr)++;
+		str++;
+	}
+}
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*resultado;
 	char	*ptr;
-	size_t	len;
 
-	len = (ft_strlen(s1) + ft_strlen(s2) + 1);
-	resultado = (char *)malloc(sizeof(char) * len);
+	if (!s1)
+		return ((char *)s2);
+	if (!s2)
+		return ((char *)s1);
+	resultado = (char *)malloc(sizeof(char)
+			* (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (resultado == NULL)
 		return (NULL);
-	len = 0;
 	ptr = resultado;
-	while (*s1 != '\0')
-	{
-		*ptr = *s1;
-		ptr++;
-		s1++;
-	}
-	while (*s2 != '\0')
-	{
-		*ptr = *s2;
-		ptr++;
-		s2++;
-	}
+	join(&ptr, s1);
+	join(&ptr, s2);
 	*ptr = '\0';
 	return (resultado);
 }
