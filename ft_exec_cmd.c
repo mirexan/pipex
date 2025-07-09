@@ -12,7 +12,7 @@
 
 #include "pipex.h"
 
-static int	is_outfile_argument(char **cmd_args, char *outfile)
+static int	is_outfile_argument(char **cmd_args, char *outfile)// Evitar que pipex sobrescriba el archivo de salida si ya se está utilizando como argumento del comando.
 {
 	int	i;
 
