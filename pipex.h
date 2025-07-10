@@ -39,7 +39,7 @@ char	**ft_split(char const *s, char c);
 // utils_pipex
 void	ft_cleanup(t_args *args);
 void	ft_open_files(t_args *args, int argc, char **argv);
-void	free_array(char **arr);
+void	free_array(char **arr, int size);
 void	handle_error(char *error_text, char *detail, t_args *args);
 void	print_error(char *file_name);
 

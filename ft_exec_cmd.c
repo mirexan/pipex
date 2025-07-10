@@ -12,7 +12,7 @@
 
 #include "pipex.h"
 
-static int	is_outfile_argument(char **cmd_args, char *outfile)// Evitar que pipex sobrescriba el archivo de salida si ya se está utilizando como argumento del comando.
+static int	is_outfile_argument(char **cmd_args, char *outfile)
 {
 	int	i;
 
@@ -54,7 +54,10 @@ static void	check_parameters(t_args *args, int i, char **envp)
 	if (!args->cmd_paths[i] || !args->cmd_args[i]
 		|| !args->cmd_args[i][0] || !envp || !envp[0])
 	{
-		print_error(args->cmd_args[i][0]);
+		ft_putstr_fd("pipex: command not found: ", 2);
+		ft_putstr_fd(args->cmd_args[i][0], 2);
+		ft_putstr_fd("\n", 2);
+		ft_cleanup(args);
 		exit(127);
 	}
 }
@@ -84,6 +87,7 @@ void	ft_exec_cmd(t_args *args, char **envp, int i)
 		check_parameters(args, i, envp);
 		execve(args->cmd_paths[i], args->cmd_args[i], envp);
 		perror("pipex: Command not found");
+		ft_cleanup(args);
 		exit (127);
 	}
 }

@@ -108,12 +108,12 @@ static int	analizar_palabras(char const*s, char c, char **resultado)
 		len_letras = contador_letras_comis(&s[si], c);
 		resultado[ri] = asignar_palabra(&s[si], len_letras);
 		if (!resultado[ri])
-			return (0);
+			return (ri);
 		ri++;
 		si = si + len_letras;
 	}
 	resultado[ri] = NULL;
-	return (1);
+	return (-1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -129,10 +129,11 @@ char	**ft_split(char const *s, char c)
 	if (!resultado)
 		return (NULL);
 	i = analizar_palabras (s, c, resultado);
-	if (i == 0)
+	if (i != -1)
 	{
-		while (resultado[i] != NULL)
-			free (resultado[i++]);
+		n = 0;
+		while (n < i)
+			free (resultado[n++]);
 		free (resultado);
 		return (NULL);
 	}

@@ -27,17 +27,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*resultado;
 	char	*ptr;
 
-	if (!s1)
-		return ((char *)s2);
-	if (!s2)
-		return ((char *)s1);
 	resultado = (char *)malloc(sizeof(char)
 			* (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (resultado == NULL)
 		return (NULL);
 	ptr = resultado;
-	join(&ptr, s1);
-	join(&ptr, s2);
+	if (s1)
+		join(&ptr, s1);	
+	if (s2)
+		join(&ptr, s2);	
 	*ptr = '\0';
 	return (resultado);
 }
+//se ha actualizado ft_strjoin para que devuelva siempre un resultado con memoria alocada

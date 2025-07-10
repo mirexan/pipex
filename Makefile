@@ -24,7 +24,7 @@ OBJS = $(SRCS:.c=.o)
 
 PRINTF_OBJS:=$(PRINTF_SRCS:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -g ##-fsanitize=address -fsanitize=leak ## para analisis de leaks
 
 ## COMPILAR EJECUTABLE ##
 
