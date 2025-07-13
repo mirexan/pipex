@@ -17,7 +17,7 @@ static int	is_outfile_argument(char **cmd_args, char *outfile)
 	int	i;
 
 	i = 0;
-	if (!cmd_args)
+	if (!cmd_args[i] || !cmd_args)
 		return (0);
 	while (cmd_args[i + 1])
 		i++;
